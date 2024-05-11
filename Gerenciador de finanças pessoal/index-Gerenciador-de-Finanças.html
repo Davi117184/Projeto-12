@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Finanças Pessoal</title>
+    <style>
+        /* Estilos opcionais */
+    </style>
+</head>
+<body>
+    <h1>Gerenciador de Finanças Pessoal</h1>
+    <input type="text" id="expenseDescription" placeholder="Description">
+    <input type="number" id="expenseAmount" placeholder="Amount">
+    <button onclick="addExpense()">Add Expense</button>
+    <ul id="expenseList"></ul>
+
+    <script>
+        function addExpense() {
+            var description = document.getElementById("expenseDescription").value;
+            var amount = parseFloat(document.getElementById("expenseAmount").value);
+            var expenseList = document.getElementById("expenseList");
+
+            var li = document.createElement("li");
+            li.textContent = description + ": $" + amount.toFixed(2);
+            expenseList.appendChild(li);
+
+            document.getElementById("expenseDescription").value = "";
+            document.getElementById("expenseAmount").value = "";
+        }
+    </script>
+</body>
+</html>
